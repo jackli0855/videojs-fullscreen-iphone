@@ -1,0 +1,40 @@
+// Sass for videojs-fullscreen-iphone
+
+.vjs-icon-fullscreen-enter:before {
+  content: "\f108";
+}
+.vjs-icon-fullscreen-enter{
+  font-family: VideoJS;
+  font-weight: normal;
+  font-style: normal;
+}
+.vjs-icon-fullscreen-exit:before{
+  content: "\f109";
+}
+.video-js {
+
+  // This class is added to the video.js element by the plugin by default.
+  .vjs-fullscreen-iphone-control {
+    cursor: pointer;
+    -webkit-box-flex: none;
+    -moz-box-flex: none;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+
+    .vjs-icon-placeholder {
+      @extend .vjs-icon-fullscreen-enter;
+    }
+    .vjs-icon-placeholder:before {
+      @extend .vjs-icon-fullscreen-enter:before;
+    }
+  }
+  &.vjs-fullscreen-iphone-video{
+    .vjs-fullscreen-iphone-control {
+      .vjs-icon-placeholder:before {
+        @extend .vjs-icon-fullscreen-exit:before;
+      }
+    }
+  }
+}
+
