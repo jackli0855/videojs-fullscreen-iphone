@@ -11,8 +11,16 @@
 .vjs-icon-fullscreen-exit:before{
   content: "\f109";
 }
-.video-js {
+.vjs-fullscreen-iphone-on{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
+.video-js {
+  .vjs-fullscreen-control{
+    display: none;
+  }
   // This class is added to the video.js element by the plugin by default.
   .vjs-fullscreen-iphone-control {
     cursor: pointer;
@@ -29,12 +37,16 @@
       @extend .vjs-icon-fullscreen-enter:before;
     }
   }
+
   &.vjs-fullscreen-iphone-video{
     .vjs-fullscreen-iphone-control {
       .vjs-icon-placeholder:before {
         @extend .vjs-icon-fullscreen-exit:before;
       }
     }
+  }
+  &.vjs-fullscreen-iphone-video.vjs-fluid{
+    height: 100% !important;
   }
 }
 

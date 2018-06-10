@@ -136,12 +136,24 @@ var FullscreenIphoneButton = function (_Button) {
   FullscreenIphoneButton.prototype.handleClick = function handleClick() {
 
     console.log('I am clicked');
-    if (this.options_.closeMe) {
-      window.close();
-    } else if (typeof this.options_.redirectTo !== 'undefined' && this.options_.redirectTo !== '') {
-      console.log(this.options_.redirectTo);
-      this.player_.pause();
-      top.open(this.options_.redirectTo, '', 'resizable=no, toolbar=no, scrollbars=no, menubar=no, status=no, directories=no, location=no');
+    console.log(this.options_);
+    if (this.options_.openNewPage) {
+      if (this.options_.closeMe) {
+        window.close();
+      } else if (typeof this.options_.redirectTo !== 'undefined' && this.options_.redirectTo !== '') {
+        // console.log(this.options_.redirectTo);
+        this.player_.pause();
+        top.open(this.options_.redirectTo, '', 'resizable=no, toolbar=no, scrollbars=no, menubar=no, status=no, directories=no, location=no');
+      }
+    } else {
+      if (this.player_.hasClass('vjs-fullscreen-iphone-video')) {
+        //scale down 
+        this.player_.removeClass('vjs-fullscreen-iphone-on');
+        this.player_.removeClass('vjs-fullscreen-iphone-video');
+      } else {
+        this.player_.addClass('vjs-fullscreen-iphone-on');
+        this.player_.addClass('vjs-fullscreen-iphone-video');
+      }
     }
   };
 
