@@ -185,8 +185,8 @@ var FullscreenIphoneButton = function (_Button) {
 
   FullscreenIphoneButton.prototype.handleClick = function handleClick() {
 
-    console.log('I am clicked');
-    console.log(this.options_);
+    //if openNewPage is true, open a new page
+    //else show at current page with the window size, but loation bar cann't be remove.
     if (this.options_.openNewPage) {
       if (this.options_.closeMe) {
         window.close();
