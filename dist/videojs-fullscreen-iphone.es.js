@@ -137,6 +137,8 @@ var FullscreenIphoneButton = function (_Button) {
 
     console.log('I am clicked');
     console.log(this.options_);
+    //if openNewPage is true, open a new page
+    //else show at current page with the window size, but loation bar cann't be remove.
     if (this.options_.openNewPage) {
       if (this.options_.closeMe) {
         window.close();
@@ -150,7 +152,15 @@ var FullscreenIphoneButton = function (_Button) {
         //scale down 
         this.player_.removeClass('vjs-fullscreen-iphone-on');
         this.player_.removeClass('vjs-fullscreen-iphone-video');
+        alert(1);
+        $('.btn_back').show();
+        $('.question').show();
+        $('#footer').show();
       } else {
+        alert(2);
+        $('.btn_back').hide();
+        $('.question').hide();
+        $('#footer').hide();
         this.player_.addClass('vjs-fullscreen-iphone-on');
         this.player_.addClass('vjs-fullscreen-iphone-video');
       }

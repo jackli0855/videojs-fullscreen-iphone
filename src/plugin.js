@@ -92,7 +92,13 @@ class FullscreenIphoneButton extends Button {
         //scale down 
         this.player_.removeClass('vjs-fullscreen-iphone-on');
         this.player_.removeClass('vjs-fullscreen-iphone-video');
+        $('.btn_back').show();
+        $('.question').show();
+        $('#footer').show();
       } else {
+        $('.btn_back').hide();
+        $('.question').hide();
+        $('#footer').hide();
         this.player_.addClass('vjs-fullscreen-iphone-on');
         this.player_.addClass('vjs-fullscreen-iphone-video');
       }
