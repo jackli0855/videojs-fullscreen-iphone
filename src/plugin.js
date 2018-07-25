@@ -86,24 +86,28 @@ class FullscreenIphoneButton extends Button {
         // console.log(this.options_.redirectTo);
         this.player_.pause();
         top.open(this.options_.redirectTo, '', 'resizable=no, toolbar=no, scrollbars=no, menubar=no, status=no, directories=no, location=no');
-      }  
+      }
     } else {
       if (this.player_.hasClass('vjs-fullscreen-iphone-video')) {
-        //scale down 
+        //scale down
         this.player_.removeClass('vjs-fullscreen-iphone-on');
         this.player_.removeClass('vjs-fullscreen-iphone-video');
-        $('.btn_back').show();
-        $('.question').show();
-        $('#footer').show();
+        if (jQuery('.btn_back').size() > 0) jQuery('.btn_back').show();
+        if (jQuery('.question').size() > 0) jQuery('.question').show();
+        if (jQuery('#footer').size() > 0) jQuery('#footer').show();
+				if (jQuery('#content').size() > 0) jQuery('#content').css('padding', '10px 0');
+				if (jQuery('.cartoon').size() > 0) jQuery('.cartoon').css('padding', '10px');
       } else {
-        $('.btn_back').hide();
-        $('.question').hide();
-        $('#footer').hide();
-        this.player_.addClass('vjs-fullscreen-iphone-on');
+        if (jQuery('.btn_back').size() > 0) jQuery('.btn_back').hide();
+        if (jQuery('.question').size() > 0) jQuery('.question').hide();
+        if (jQuery('#footer').size() > 0) jQuery('#footer').hide();
+				if (jQuery('#content').size() > 0) jQuery('#content').css('padding', '0');
+				if (jQuery('.cartoon').size() > 0) jQuery('.cartoon').css('padding', '0');
+        if (jQuery('#content').size() > 0) this.player_.addClass('vjs-fullscreen-iphone-on');
         this.player_.addClass('vjs-fullscreen-iphone-video');
       }
     }
-    
+
   }
 }
 
