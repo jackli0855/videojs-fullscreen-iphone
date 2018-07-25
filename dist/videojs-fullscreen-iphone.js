@@ -164,12 +164,14 @@ var FullscreenIphoneButton = function (_Button) {
         //scale down
         this.player_.removeClass('vjs-fullscreen-iphone-on');
         this.player_.removeClass('vjs-fullscreen-iphone-video');
+        if (jQuery('#logo').size() > 0) jQuery('#logo').show();
         if (jQuery('.btn_back').size() > 0) jQuery('.btn_back').show();
         if (jQuery('.question').size() > 0) jQuery('.question').show();
         if (jQuery('#footer').size() > 0) jQuery('#footer').show();
         if (jQuery('#content').size() > 0) jQuery('#content').css('padding', '10px 0');
         if (jQuery('.cartoon').size() > 0) jQuery('.cartoon').css('padding', '10px');
       } else {
+        if (jQuery('#logo').size() > 0) jQuery('#logo').hide();
         if (jQuery('.btn_back').size() > 0) jQuery('.btn_back').hide();
         if (jQuery('.question').size() > 0) jQuery('.question').hide();
         if (jQuery('#footer').size() > 0) jQuery('#footer').hide();
